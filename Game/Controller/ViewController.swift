@@ -8,32 +8,42 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet var gameTableView: UITableView!
-
     private var games: [Game] = []
+
+    @IBOutlet var gameTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameTableView.dataSource = self
 
-        gameTableView.register(UINib(nibName: "GameTableViewCell", bundle: nil),
-                               forCellReuseIdentifier: "gameTableViewCell")
+        setupView()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        tabBarController?.tabBar.isHidden = false
+
         Task { await getGames() }
     }
-    
+
     func getGames() async {
         let network = NetworkService()
         do {
             games = try await network.getGames()
             gameTableView.reloadData()
         } catch {
-            fatalError("Error: connection failed.")
+            showAlert(message: "Failed to load games detail. Please try again.")
         }
+    }
+    
+    private func setupView() {
+        gameTableView.dataSource = self
+        gameTableView.delegate = self
+
+        gameTableView.register(
+            UINib(nibName: "GameTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "gameTableViewCell"
+        )
     }
 }
 
@@ -53,14 +63,13 @@ extension ViewController: UITableViewDataSource {
             withIdentifier: "gameTableViewCell",
             for: indexPath
         ) as? GameTableViewCell {
-            
             let game = games[indexPath.row]
             cell.container.layer.cornerRadius = 8
             cell.container.clipsToBounds = true
-            
+
             cell.gameName.text = game.name
             cell.gameReleased.text = game.released
-            cell.gameRating.text = String(format: "%.2f", game.rating)
+            cell.gameRating.text = String(format: "%.1f", game.rating)
             cell.gameImage.image = game.image
             cell.gameImage.layer.cornerRadius = 16.0
             cell.gameImage.clipsToBounds = true
@@ -93,6 +102,25 @@ extension ViewController: UITableViewDataSource {
                     game.state = .failed
                     game.image = nil
                 }
+            }
+        }
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let selectedGame = games[indexPath.row]
+        performSegue(withIdentifier: "moveToDetail", sender: selectedGame)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moveToDetail" {
+            if let detailViewController = segue.destination as? DetailGameViewController,
+               let selectedGame = sender as? Game {
+                detailViewController.gameId = selectedGame.id
             }
         }
     }

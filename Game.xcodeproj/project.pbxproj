@@ -17,7 +17,14 @@
 		2C3690402C73022B005E5F15 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C36903D2C73022B005E5F15 /* GameTableViewCell.swift */; };
 		2C3690422C730503005E5F15 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3690412C730503005E5F15 /* GameModel.swift */; };
 		2C3690442C7318CD005E5F15 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3690432C7318CD005E5F15 /* ImageDownloader.swift */; };
+		2C44B38D2C7D729700D75A19 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44B38C2C7D729700D75A19 /* FavoriteViewController.swift */; };
+		2C9BC7072C7D809600AE0C2C /* UIViewControllerAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BC7062C7D809600AE0C2C /* UIViewControllerAlerts.swift */; };
 		2C9EB2B02C73811100AD3A2A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9EB2AF2C73811100AD3A2A /* NetworkService.swift */; };
+		2CD5A5832C7DD14A00CCCEC7 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD5A5822C7DD14A00CCCEC7 /* DownloadState.swift */; };
+		2CDCE0692C7490ED00EB5382 /* DetailGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDCE0682C7490ED00EB5382 /* DetailGameViewController.swift */; };
+		2CDF7E502C7C7FFF00C7360A /* GameFavorite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF7E4E2C7C7FFF00C7360A /* GameFavorite.xcdatamodeld */; };
+		2CDF7E522C7C808000C7360A /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF7E512C7C808000C7360A /* GameProvider.swift */; };
+		2CDF7E542C7C81AD00C7360A /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF7E532C7C81AD00C7360A /* FavoriteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +40,14 @@
 		2C36903E2C73022B005E5F15 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		2C3690412C730503005E5F15 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		2C3690432C7318CD005E5F15 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		2C44B38C2C7D729700D75A19 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		2C9BC7062C7D809600AE0C2C /* UIViewControllerAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlerts.swift; sourceTree = "<group>"; };
 		2C9EB2AF2C73811100AD3A2A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2CD5A5822C7DD14A00CCCEC7 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
+		2CDCE0682C7490ED00EB5382 /* DetailGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameViewController.swift; sourceTree = "<group>"; };
+		2CDF7E4F2C7C7FFF00C7360A /* GameFavorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameFavorite.xcdatamodel; sourceTree = "<group>"; };
+		2CDF7E512C7C808000C7360A /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
+		2CDF7E532C7C81AD00C7360A /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,21 +80,24 @@
 		2C3690242C72FDE0005E5F15 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				2C3690452C731DD4005E5F15 /* Base */,
+				2CDF7E4C2C7C7F5400C7360A /* Controller */,
+				2CDF7E4D2C7C7F8200C7360A /* Model */,
+				2C3690482C731DED005E5F15 /* View */,
+				2C9BC7052C7D806200AE0C2C /* Utils */,
 				2C3690472C731DE4005E5F15 /* NetworkSource */,
 				2C3690462C731DDA005E5F15 /* FileSystem */,
-				2C3690482C731DED005E5F15 /* View */,
-				2C3690452C731DD4005E5F15 /* App */,
 			);
 			path = Game;
 			sourceTree = "<group>";
 		};
-		2C3690452C731DD4005E5F15 /* App */ = {
+		2C3690452C731DD4005E5F15 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				2C3690252C72FDE0005E5F15 /* AppDelegate.swift */,
 				2C3690272C72FDE0005E5F15 /* SceneDelegate.swift */,
 			);
-			path = App;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		2C3690462C731DDA005E5F15 /* FileSystem */ = {
@@ -96,7 +113,6 @@
 		2C3690472C731DE4005E5F15 /* NetworkSource */ = {
 			isa = PBXGroup;
 			children = (
-				2C3690412C730503005E5F15 /* GameModel.swift */,
 				2C3690432C7318CD005E5F15 /* ImageDownloader.swift */,
 				2C9EB2AF2C73811100AD3A2A /* NetworkService.swift */,
 			);
@@ -106,12 +122,41 @@
 		2C3690482C731DED005E5F15 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2C3690292C72FDE0005E5F15 /* ViewController.swift */,
 				2C36902B2C72FDE0005E5F15 /* Main.storyboard */,
 				2C36903D2C73022B005E5F15 /* GameTableViewCell.swift */,
 				2C36903E2C73022B005E5F15 /* GameTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2C9BC7052C7D806200AE0C2C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C9BC7062C7D809600AE0C2C /* UIViewControllerAlerts.swift */,
+				2CD5A5822C7DD14A00CCCEC7 /* DownloadState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2CDF7E4C2C7C7F5400C7360A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CDCE0682C7490ED00EB5382 /* DetailGameViewController.swift */,
+				2C3690292C72FDE0005E5F15 /* ViewController.swift */,
+				2C44B38C2C7D729700D75A19 /* FavoriteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2CDF7E4D2C7C7F8200C7360A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C3690412C730503005E5F15 /* GameModel.swift */,
+				2CDF7E4E2C7C7FFF00C7360A /* GameFavorite.xcdatamodeld */,
+				2CDF7E512C7C808000C7360A /* GameProvider.swift */,
+				2CDF7E532C7C81AD00C7360A /* FavoriteModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,12 +169,15 @@
 				2C36901E2C72FDE0005E5F15 /* Sources */,
 				2C36901F2C72FDE0005E5F15 /* Frameworks */,
 				2C3690202C72FDE0005E5F15 /* Resources */,
+				2C7895F32C78698100E8C52F /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Game;
+			packageProductDependencies = (
+			);
 			productName = Game;
 			productReference = 2C3690222C72FDE0005E5F15 /* Game.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 2C3690192C72FDE0005E5F15;
+			packageReferences = (
+				2C7895F22C78697800E8C52F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 2C3690232C72FDE0005E5F15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +232,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C7895F32C78698100E8C52F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C36901E2C72FDE0005E5F15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,8 +263,15 @@
 				2C36902A2C72FDE0005E5F15 /* ViewController.swift in Sources */,
 				2C3690262C72FDE0005E5F15 /* AppDelegate.swift in Sources */,
 				2C3690282C72FDE0005E5F15 /* SceneDelegate.swift in Sources */,
+				2CDCE0692C7490ED00EB5382 /* DetailGameViewController.swift in Sources */,
 				2C3690402C73022B005E5F15 /* GameTableViewCell.swift in Sources */,
 				2C9EB2B02C73811100AD3A2A /* NetworkService.swift in Sources */,
+				2CDF7E522C7C808000C7360A /* GameProvider.swift in Sources */,
+				2CDF7E542C7C81AD00C7360A /* FavoriteModel.swift in Sources */,
+				2C9BC7072C7D809600AE0C2C /* UIViewControllerAlerts.swift in Sources */,
+				2CD5A5832C7DD14A00CCCEC7 /* DownloadState.swift in Sources */,
+				2C44B38D2C7D729700D75A19 /* FavoriteViewController.swift in Sources */,
+				2CDF7E502C7C7FFF00C7360A /* GameFavorite.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,25 +421,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6CB58ND43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game/FileSystem/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Game;
+				PRODUCT_BUNDLE_IDENTIFIER = com.game.seni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -369,25 +452,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6CB58ND43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game/FileSystem/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Game;
+				PRODUCT_BUNDLE_IDENTIFIER = com.game.seni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -413,6 +500,31 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C7895F22C78697800E8C52F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCVersionGroup section */
+		2CDF7E4E2C7C7FFF00C7360A /* GameFavorite.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CDF7E4F2C7C7FFF00C7360A /* GameFavorite.xcdatamodel */,
+			);
+			currentVersion = 2CDF7E4F2C7C7FFF00C7360A /* GameFavorite.xcdatamodel */;
+			name = GameFavorite.xcdatamodeld;
+			path = /Volumes/Art/Programming/Dicoding/iOS/Fundamental/Game/Game/Model/GameFavorite.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C36901A2C72FDE0005E5F15 /* Project object */;
 }
