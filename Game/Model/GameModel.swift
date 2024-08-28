@@ -5,12 +5,7 @@
 //  Created by + on 2/14/1446 AH.
 //
 
-import Foundation
 import UIKit
-
-enum DownloadState {
-  case new, downloaded, failed
-}
 
 class Game: Codable {
     let id: Int
@@ -22,7 +17,7 @@ class Game: Codable {
 
     var image: UIImage?
     var state: DownloadState = .new
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, released
         case backgroundImage = "background_image"
@@ -62,11 +57,10 @@ class Genre: Codable {
     }
 }
 
-
 struct GameResponses: Codable {
     let status: String
     let games: [GameResponse]
-    
+
     enum CodingKeys: String, CodingKey {
         case status
         case games = "results"
@@ -91,13 +85,13 @@ struct GameResponse: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.released = try container.decode(String.self, forKey: .released)
-        self.backgroundImage = URL(string: try container.decode(String.self, forKey: .backgroundImage))!
-        self.rating = try container.decode(Double.self, forKey: .rating)
-        self.genres = try container.decode([Genre].self, forKey: .genres)
-        self.descriptionRaw = try container.decode(String.self, forKey: .descriptionRaw)
+
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        released = try container.decode(String.self, forKey: .released)
+        backgroundImage = URL(string: try container.decode(String.self, forKey: .backgroundImage))!
+        rating = try container.decode(Double.self, forKey: .rating)
+        genres = try container.decode([Genre].self, forKey: .genres)
+        descriptionRaw = try container.decode(String.self, forKey: .descriptionRaw)
     }
 }
